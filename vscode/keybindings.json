@@ -1,0 +1,31 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+      "key": "ctrl+b",
+      "command": "-workbench.debug.viewlet.action.addFunctionBreakpointAction"
+    },
+    {
+      "key": "alt+j",
+      "command": "selectNextSuggestion",
+      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+      "key": "alt+k",
+      "command": "selectPrevSuggestion",
+      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+      "key": "alt+l",
+      "command": "acceptSelectedSuggestion",
+      "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+      "key": "alt+l",
+      "command": "cursorRight",
+      "when": "!suggestWidgetVisible"
+    },
+    {
+      "key": "alt+h",
+      "command": "deleteWordEndLeft"
+    }
+  ]
