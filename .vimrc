@@ -5,9 +5,8 @@ set clipboard=unnamed
 set scrolloff=5
 
 " Remapings
-inoremap <Esc> -
-inoremap kj <Esc>
-inoremap jk <ESC>$a;<ESC>
+inoremap kj <C-[>
+inoremap jk <ESC>$a;<ESC>;
 inoremap jm <ESC>o{<Enter>
 inoremap jn <END>();<ESC>
 nnoremap <Leader>< a<<ESC>ea><ESC>
