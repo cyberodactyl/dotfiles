@@ -40,8 +40,8 @@ nnoremap <Space>p mzp"zd$"_dd`z"zp
 nnoremap <Space>P mzp"zd$"_dd`z"zp
 
 " Fast movement
-nnoremap <S-j> 3j
-nnoremap <S-k> 3k
+nnoremap <S-j> <C-d>
+nnoremap <S-k> <C-u>
 
 " Replace
 nnoremap ri{ "_di{P
@@ -49,6 +49,7 @@ nnoremap ri' "_di'P
 nnoremap ri" "_di"P
 nnoremap r$ "_d$P
 nnoremap riw "_diwP
+nnoremap riW "_diWP
 
 " Remove typeparameter surround
 nnoremap dst "zdiw"zpbdB
