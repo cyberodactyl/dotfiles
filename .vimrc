@@ -3,6 +3,10 @@ let mapleader = ","
 set number
 set clipboard=unnamed
 set scrolloff=5
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
 
 " --==== Remapings ====--
 inoremap kj <C-[>
@@ -55,8 +59,8 @@ nnoremap riW "_diWP
 nnoremap dst "zdiw"zpbdB
 
 " Visual
+nmap <Leader>v <C-V>
 vnoremap <Leader>j <ESC>
-vnoremap <Leader>v <C-V>
 
 " Save as root
 cmap w!! w !sudo tee > /dev/null %
