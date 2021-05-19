@@ -1,4 +1,8 @@
-source ./.vimrc
+if(has('win32'))
+	source ~\dotfiles\.vimrc
+else
+	source ~/dotfiles/.vimrc
+endif
 
 set termguicolors
 set clipboard=unnamedplus
@@ -24,7 +28,6 @@ else
     endif
 endif
 
-
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
@@ -39,8 +42,20 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'mhinz/vim-startify'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
+" Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 " Appearance
 autocmd vimenter * ++nested colorscheme sonokai
+
+" -=== Mappings ===-
+"  NERDTree
+nnoremap <C-S-b> :NERDTreeFocus<CR>
+nnoremap <Leader>b :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
