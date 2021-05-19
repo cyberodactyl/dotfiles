@@ -7,11 +7,23 @@ nmap ; <Plug>(easymotion-s2)
 
 " -=== Vim-Plug ===-
 
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if (!has('win32'))
+	let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+	if empty(glob(data_dir . '/autoload/plug.vim'))
+	  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	endif
+else
+	if empty(glob('$LOCALAPPDATA\nvim\autoload\plug.vim'))
+	  silent ! powershell -Command "
+		  \   New-Item -Path ~\AppData\Local\nvim -Name autoload -Type Directory -Force;
+		  \   Invoke-WebRequest
+		  \   -Uri 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+		  \   -OutFile ~\AppData\Local\nvim\autoload\plug.vim
+		  \ "
+    endif
 endif
+
 
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -20,6 +32,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'sainnhe/sonokai'
 Plug 'easymotion/vim-easymotion'
@@ -30,5 +43,4 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 call plug#end()
 
 " Appearance
-
 autocmd vimenter * ++nested colorscheme sonokai
