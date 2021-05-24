@@ -6,6 +6,7 @@ endif
 
 set termguicolors
 set clipboard=unnamedplus
+set nocompatible
 
 nmap ; <Plug>(easymotion-s2)
 
@@ -33,6 +34,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
+" -=== Variables ===-
+if (exists('g:GuiLoaded')) 
+	let g:airline_powerline_fonts = 1
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
@@ -40,6 +46,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'sainnhe/sonokai'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'machakann/vim-highlightedyank'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'mhinz/vim-startify'
@@ -55,7 +62,18 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 autocmd vimenter * ++nested colorscheme sonokai
 
 " -=== Mappings ===-
-"  NERDTree
+" Common
+nnoremap <C-s> :w<CR>
+nnoremap <C-S>q :qa!
+
+" NERDTree
 nnoremap <C-S-b> :NERDTreeFocus<CR>
 nnoremap <Leader>b :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Formatting
+nnoremap <S-Enter> o<ESC>
+inoremap <S-Enter> <ESC>o
+
+" -== Commands ===
+cnoremap rcres so ~\.vimrc
