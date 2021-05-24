@@ -34,6 +34,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
+" -=== Variables ===-
+if (exists('g:GuiLoaded')) 
+	let g:airline_powerline_fonts = 1
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
