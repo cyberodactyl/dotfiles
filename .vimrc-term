@@ -1,7 +1,7 @@
 if(has('win32'))
-	source ~\dotfiles\.vimrc
+  source ~\dotfiles\.vimrc
 else
-	source ~/dotfiles/.vimrc
+  source ~/dotfiles/.vimrc
 endif
 
 set termguicolors
@@ -13,31 +13,30 @@ nmap ; <Plug>(easymotion-s2)
 " -=== Vim-Plug ===-
 
 if (!has('win32'))
-	let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-	if empty(glob(data_dir . '/autoload/plug.vim'))
-	  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-	endif
+  let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+  if empty(glob(data_dir . '/autoload/plug.vim'))
+	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
 else
-	if empty(glob('$LOCALAPPDATA\nvim\autoload\plug.vim'))
-	  silent ! powershell -Command "
+  if empty(glob('$LOCALAPPDATA\nvim\autoload\plug.vim'))
+	silent ! powershell -Command "
 		  \   New-Item -Path ~\AppData\Local\nvim -Name autoload -Type Directory -Force;
 		  \   Invoke-WebRequest
 		  \   -Uri 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 		  \   -OutFile ~\AppData\Local\nvim\autoload\plug.vim
 		  \ "
-    endif
+  endif
 endif
 
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
+	  \| PlugInstall --sync | source $MYVIMRC
+	  \| endif
 
 " -=== Variables ===-
-if (exists('g:GuiLoaded')) 
-	let g:airline_powerline_fonts = 1
-endif
+let g:indentLine_char = '▏'
+let delimitMate_expand_cr = 1
 
 call plug#begin('~/.vim/plugged')
 
@@ -51,13 +50,15 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdtree'
+Plug 'yggdroot/indentline'
+Plug 'raimondi/delimitMate'
 
 call plug#end()
 
 " Start NERDTree when Vim starts with a directory argument.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+	  \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 " Appearance
 autocmd vimenter * ++nested colorscheme sonokai
 
