@@ -4,8 +4,11 @@ set surround
 set argtextobj
 set highlightedyank
 set clipboard+=ideaput
+set visualbell
 
 " Mappings
 map <Leader>d <Action>(Debug)
 map gs <Action>(GotoImplementation)
 map gS <Action>(QuickImplementations)
+map g; <Action>(AceDeclarationAction)
+map <Leader>z <Action>(ToggleZenMode)
