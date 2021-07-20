@@ -60,6 +60,10 @@ nnoremap <Space>P mzp"zd$"_dd`z"zp
 nnoremap <S-j> <C-d>
 nnoremap <S-k> <C-u>
 
+"> Increment & sequence
+vnoremap <Leader>i <C-a>
+vnoremap <Leader>I g<C-a>
+
 "> Replace
 nnoremap ri{ "_di{P
 nnoremap riB "_diBP
