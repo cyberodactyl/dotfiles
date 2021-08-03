@@ -14,8 +14,8 @@ set mouse=a
 inoremap kj <C-[>
 inoremap jk <END>;<ESC>
 inoremap jl <ESC>la
-inoremap jm <END>;<ESC>o
-inoremap jM <ESC>A {<Enter>
+inoremap jM <END>;<ESC>o
+inoremap jm <ESC>A {<Enter>
 inoremap jn <END>();<ESC>
 nnoremap ,k $a;<ESC>
 
