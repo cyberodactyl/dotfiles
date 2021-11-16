@@ -8,6 +8,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set mouse=a
+set rnu
 
 " --==== Remappings ====--
 "> Insert mode shortcuts 
