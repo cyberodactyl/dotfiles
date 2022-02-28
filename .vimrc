@@ -13,6 +13,7 @@ set rnu
 " --==== Remappings ====--
 "> Insert mode shortcuts 
 inoremap kj <C-[>
+inoremap kc <ESC>cc
 inoremap jk <END>;<ESC>
 inoremap jl <ESC>la
 inoremap jM <END>;<ESC>o
@@ -38,16 +39,21 @@ nnoremap yam va{oky
 nnoremap <Leader>w /[,(]<Enter>w
 nnoremap <Leader>b ?[,(]<Enter>b
 nnoremap <Leader>p ?)<Enter>i
-nnoremap <Leader>a /)<Enter>i, <ESC>a
-nnoremap <Leader>A /);<Enter>i, <ESC>a
+nnoremap <Leader>e /)<Enter>i, <ESC>a
+nnoremap <Leader>E /);<Enter>i, <ESC>a
+nnoremap <Leader>a /(<Enter>a
+
+"> Leader commands
+nnoremap <Leader>j :join<Enter>;
 
 "> Space mappings
-nnoremap <Space>o o<ESC>
-nnoremap <Space>O O<ESC>
-nnoremap <Space>j :join<Enter>
 nnoremap <Space>; a;<ESC>
 nnoremap <Space><Space> zz
-map <Space>d "_d
+nnoremap <Space>l i<Space><ESC>l
+nnoremap <Space>h db
+nnoremap <Space>j o<ESC><Space>
+nnoremap <Space>k O<ESC><Space>
+nnoremap <Space>d dd<Space>
 
 "> Delete around/inside new lines
 nnoremap da<Space> ?\n\n<Enter>jvNjd
@@ -55,7 +61,6 @@ nnoremap di<Space> ?\n\n<Enter>jjdN
 
 "> Inline paste
 nnoremap <Space>p mzp"zd$"_dd`z"zp
-nnoremap <Space>P mzp"zd$"_dd`z"zp
 
 "> Fast movement
 nnoremap <S-j> <C-d>
