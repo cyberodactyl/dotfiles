@@ -15,11 +15,14 @@ set rnu
 inoremap kj <C-[>
 inoremap kc <ESC>cc
 inoremap jk <END>;<ESC>
+inoremap jK <END>;<ESC>o
 inoremap jl <ESC>la
-inoremap jM <END>;<ESC>o
-inoremap jm <ESC>A {<Enter>
-inoremap jn <END>();<ESC>
+inoremap jm <ESC>la {<Enter>
+inoremap jM () {<Enter>
+inoremap jn <ESC>o
+inoremap jN <ESC>O
 nnoremap ,k $a;<ESC>
+nnoremap ,l $a,<Enter>
 
 "> Deletion
 nnoremap dd "_dd
@@ -43,8 +46,9 @@ nnoremap <Leader>e /)<Enter>i, <ESC>a
 nnoremap <Leader>E /);<Enter>i, <ESC>a
 nnoremap <Leader>a /(<Enter>a
 
-"> Leader commands
+"> Leader mappings
 nnoremap <Leader>j :join<Enter>;
+nnoremap <Leader>u V~<Esc>
 
 "> Space mappings
 nnoremap <Space>; a;<ESC>
@@ -79,6 +83,11 @@ nnoremap ri" "_di"P
 nnoremap r$ "_d$p
 nnoremap riw "_diwP
 nnoremap riW "_diWP
+
+"> Mark shortcuts
+nnoremap mm mmVV
+map <Leader>y Y`mp
+map <Leader>d d`mp
 
 "> Remove typeparameter surround
 nnoremap dst "zdiw"zpbdB

@@ -7,10 +7,12 @@ set clipboard+=ideaput
 set visualbell
 
 " Mappings
-map <Leader>d <Action>(Debug)
+map <Leader>r <Action>(Debug)
+map <Leader>R <Action>(Stop)
 map gs <Action>(GotoImplementation)
 map gS <Action>(QuickImplementations)
 map g; <Action>(AceDeclarationAction)
 map <Leader>z <Action>(ToggleZenMode)
 map <Leader><Tab><Tab> <Action>(ConvertIndentsToTabs)
 map <Leader><Tab><Space> <Action>(ConvertIndentsToSpaces)
+nnoremap mm mm:action ToggleBookmarkM<CR>
