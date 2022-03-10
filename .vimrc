@@ -69,6 +69,8 @@ nnoremap <Space>p mzp"zd$"_dd`z"zp
 "> Fast movement
 nnoremap <S-j> <C-d>
 nnoremap <S-k> <C-u>
+vnoremap <S-j> 5jzz
+vnoremap <S-k> 5kzz
 
 "> Increment & sequence
 vnoremap <Leader>i <C-a>
