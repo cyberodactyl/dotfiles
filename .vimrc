@@ -83,8 +83,10 @@ nnoremap rib "_dibP
 nnoremap ri' "_di'P
 nnoremap ri" "_di"P
 nnoremap r$ "_d$p
-nnoremap riw "_diwP
-nnoremap riW "_diWP
+nnoremap rw "_diwP
+nnoremap rW "_diWP
+nnoremap r\\w rw
+nnoremap r\\W rW
 
 "> Mark shortcuts
 nnoremap mm mmVV
@@ -94,10 +96,24 @@ map <Leader>d d`mp
 "> Remove typeparameter surround
 nnoremap dst "zdiw"zpbdB
 
+"> Async task to method
+nnoremap das /async<Enter>df<:s/>/<Enter>
+
 "> Visual
 nmap <Leader>v <C-V>
 vnoremap <Leader>j <ESC>
 vnoremap D "_d
+
+"> Shortcuts for inside word actions
+nnoremap yw yiw
+nnoremap Yw yw
+nnoremap YY Y
+nnoremap dw diw
+nnoremap Dw dw
+nnoremap DD D
+nnoremap cw ciw
+nnoremap Cw cw
+nnoremap CC C
 
 "> Save as root
 cmap w!! w !sudo tee > /dev/null %
