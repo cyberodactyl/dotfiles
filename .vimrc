@@ -116,4 +116,4 @@ nnoremap Cw cw
 nnoremap CC C
 
 "> Save as root
-cmap w!! w !sudo tee > /dev/null %
+cmap ,w!! w !sudo tee > /dev/null %
