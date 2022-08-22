@@ -14,9 +14,10 @@ function New-SymLink {
 }
 
 Set-Location ..
+$wd = Get-Location
 
 foreach ($file in $homeFolderFiles) {
-    New-SymLink $file "~\$file"
+    New-SymLink "$wd\$file" "~\$file"
 }
 
 foreach ($pair in $otherConfigs.GetEnumerator()) {
