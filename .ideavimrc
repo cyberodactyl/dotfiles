@@ -1,5 +1,4 @@
 source ~\.vimrc
-set easymotion
 set surround
 set argtextobj
 set highlightedyank
@@ -9,6 +8,7 @@ set visualbell
 " Mappings
 map <Leader>r <Action>(Debug)
 map <Leader>R <Action>(Stop)
+map <Leader>i <Action>(Generate)
 map gs <Action>(GotoImplementation)
 map gS <Action>(QuickImplementations)
 map g; <Action>(AceDeclarationAction)
@@ -18,3 +18,6 @@ map <Leader><Tab><Space> <Action>(ConvertIndentsToSpaces)
 nnoremap mm mm:action ToggleBookmarkM<CR>
 map <C-i> <Action>(Forward)
 map <C-o> <Action>(Back)
+
+" Commands
+cmap ,rso so ~\.ideavimrc

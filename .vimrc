@@ -73,6 +73,10 @@ nnoremap <S-k> <C-u>
 vnoremap <S-j> 5jzz
 vnoremap <S-k> 5kzz
 
+"> Camel-case movement
+map <S-l> /[A-Z]<Enter>
+map <S-h> ?[A-Z]<Enter>
+
 "> Increment & sequence
 vnoremap <Leader>i <C-a>
 vnoremap <Leader>I g<C-a>
@@ -117,4 +121,4 @@ nnoremap Cw cw
 nnoremap CC C
 
 "> Save as root
-cmap w!! w !sudo tee > /dev/null %
+cmap ,w!! w !sudo tee > /dev/null %
