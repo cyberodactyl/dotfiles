@@ -19,6 +19,7 @@ inoremap jK <END>;<ESC>o
 inoremap jl <ESC>la
 inoremap jm <ESC>la {<Enter>
 inoremap jM () {<Enter>
+inoremap j, () => {<Enter>
 inoremap jn <ESC>o
 inoremap jN <ESC>O
 nnoremap ,k $a;<ESC>
@@ -47,7 +48,7 @@ nnoremap <Leader>E /);<Enter>i, <ESC>a
 nnoremap <Leader>a /(<Enter>a
 
 "> Leader mappings
-nnoremap <Leader>j :join<Enter>;
+nmap <Leader>j :join<Enter>;
 nnoremap <Leader>u V~<Esc>
 
 "> Space mappings
@@ -55,9 +56,9 @@ nnoremap <Space>; a;<ESC>
 nnoremap <Space><Space> zz
 nnoremap <Space>l i<Space><ESC>l
 nnoremap <Space>h db
-nnoremap <Space>j o<ESC><Space>
-nnoremap <Space>k O<ESC><Space>
-nnoremap <Space>d dd<Space>
+nmap <Space>j o<ESC><Space>
+nmap <Space>k O<ESC><Space>
+nmap <Space>d dd<Space>
 
 "> Delete around/inside new lines
 nnoremap da<Space> ?\n\n<Enter>jvNjd
