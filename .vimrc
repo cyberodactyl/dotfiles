@@ -95,8 +95,10 @@ nnoremap r\\W rW
 
 "> Mark shortcuts
 nnoremap mm mmVV
-map <Leader>y Y`mp
-map <Leader>d d`mp
+nmap <Leader>y mny$`mp
+nmap <Leader>d mnd$`mp
+vmap <Leader>y mny`mp
+vmap <Leader>d mnd`mp
 
 "> Remove typeparameter surround
 nnoremap dst "zdiw"zpbdB

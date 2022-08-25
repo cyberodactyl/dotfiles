@@ -16,6 +16,7 @@ map <Leader>z <Action>(ToggleZenMode)
 map <Leader><Tab><Tab> <Action>(ConvertIndentsToTabs)
 map <Leader><Tab><Space> <Action>(ConvertIndentsToSpaces)
 nnoremap mm mm:action ToggleBookmarkM<CR>
+nnoremap mn mn:action ToggleBookmarkN<CR>
 map <C-i> <Action>(Forward)
 map <C-o> <Action>(Back)
 
