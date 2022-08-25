@@ -1,6 +1,7 @@
 $homeFolderFiles = @('.vimrc', '.ideavimrc')
 $otherConfigs = @{
     'Profile.ps1' = '~\Documents\PowerShell\Profile.ps1';
+    'vifmrc' = '~\.vifm\vifmrc';
 }
 
 function New-SymLink {
