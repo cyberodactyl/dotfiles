@@ -14,16 +14,24 @@ set rnu
 "> Insert mode shortcuts 
 inoremap kj <C-[>
 inoremap kc <ESC>cc
+inoremap kd <ESC>dd
 inoremap jk <END>;<ESC>
-inoremap jK <END>;<ESC>o
+inoremap jK <END>();<ESC>
 inoremap jl <ESC>la
+inoremap jL <ESC>A
+inoremap jh <ESC>hi
+inoremap jH <ESC>I
 inoremap jm <ESC>la {<Enter>
 inoremap jM () {<Enter>
 inoremap j, () => {<Enter>
-inoremap jn <ESC>o
-inoremap jN <ESC>O
-nnoremap ,k $a;<ESC>
-nnoremap ,l $a,<Enter>
+inoremap jn <END>;<Enter>
+inoremap jN <ESC>o
+nnoremap ,k A;<ESC>
+nnoremap ,K A();<ESC>
+nnoremap ,l A,<Enter>
+
+"> Switch jump
+nnoremap <Tab> ``
 
 "> Deletion
 nnoremap dd "_dd
@@ -48,7 +56,7 @@ nnoremap <Leader>E /);<Enter>i, <ESC>a
 nnoremap <Leader>a /(<Enter>a
 
 "> Leader mappings
-nmap <Leader>j :join<Enter>;
+nmap <Leader>j :join<Enter>()
 nnoremap <Leader>u V~<Esc>
 
 "> Space mappings
@@ -56,9 +64,9 @@ nnoremap <Space>; a;<ESC>
 nnoremap <Space><Space> zz
 nnoremap <Space>l i<Space><ESC>l
 nnoremap <Space>h db
-nmap <Space>j o<ESC><Space>
-nmap <Space>k O<ESC><Space>
-nmap <Space>d dd<Space>
+nnoremap <Space>j o<ESC><Space>
+nnoremap <Space>k O<ESC><Space>
+nnoremap <Space>d dd<Space>
 
 "> Delete around/inside new lines
 nnoremap da<Space> ?\n\n<Enter>jvNjd
@@ -95,10 +103,10 @@ nnoremap r\\W rW
 
 "> Mark shortcuts
 nnoremap mm mmVV
-nmap <Leader>y mny$`mp
-nmap <Leader>d mnd$`mp
-vmap <Leader>y mny`mp
-vmap <Leader>d mnd`mp
+nnoremap <Leader>y mnyy`mp
+nnoremap <Leader>d mnyd`mp
+vnoremap <Leader>y mny`mp
+vnoremap <Leader>d mnd`mp
 
 "> Remove typeparameter surround
 nnoremap dst "zdiw"zpbdB
@@ -110,17 +118,6 @@ nnoremap das /async<Enter>df<:s/>/<Enter>
 nmap <Leader>v <C-V>
 vnoremap <Leader>j <ESC>
 vnoremap D "_d
-
-"> Shortcuts for inside word actions
-nnoremap yw yiw
-nnoremap Yw yw
-nnoremap YY Y
-nnoremap dw diw
-nnoremap Dw dw
-nnoremap DD D
-nnoremap cw ciw
-nnoremap Cw cw
-nnoremap CC C
 
 "> Save as root
 cmap ,w!! w !sudo tee > /dev/null %
