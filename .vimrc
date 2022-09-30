@@ -29,6 +29,8 @@ inoremap jN <ESC>o
 nnoremap ,k A;<ESC>
 nnoremap ,K A();<ESC>
 nnoremap ,l A,<Enter>
+nnoremap ^ 0
+nnoremap 0 ^
 
 "> Switch jump
 nnoremap <Tab> ``
