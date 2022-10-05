@@ -24,8 +24,8 @@ inoremap jH <ESC>I
 inoremap jm <ESC>la {<Enter>
 inoremap jM () {<Enter>
 inoremap j, () => {<Enter>
-inoremap jn <END>;<Enter>
-inoremap jN <ESC>o
+inoremap jN <END>;<Enter>
+inoremap jn <ESC>o
 nnoremap ,k A;<ESC>
 nnoremap ,K A();<ESC>
 nnoremap ,l A,<Enter>
