@@ -1,0 +1,9 @@
+source ~\.vimrc
+
+nnoremap <Leader>r :vsc Debug.Start
+nnoremap <Leader>R :vsc Debug.StopDebugging
+
+nnoremap gD :vsc Edit.PeekDefinition
+nnoremap gs :vsc Edit.GoToImplementation
+nnoremap <Leader>z View.FullScreen
+nnoremap mm mm:vsc Edit.BriefBookmarkDrop0
