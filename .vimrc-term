@@ -43,7 +43,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'sainnhe/sonokai'
-Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'machakann/vim-highlightedyank'
@@ -77,4 +76,4 @@ nnoremap <S-Enter> o<ESC>
 inoremap <S-Enter> <ESC>o
 
 " -== Commands ===
-cnoremap rcres so ~\.vimrc
+cnoremap rcr so ~\.vimrc

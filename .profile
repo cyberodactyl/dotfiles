@@ -31,4 +31,8 @@ vim#() {
     sudo vim -u $vimrcFile $1
 }
 
-alias scb clip.exe
+alias sudo='sudo '
+alias scb=clip.exe
+alias sctl=systemctl
+alias jctl=journalctl
+alias rg=ranger

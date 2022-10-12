@@ -32,6 +32,7 @@ Set-Alias ln New-Symlink
 Set-Alias vim nvim
 Set-Alias gvim nvim-qt
 Set-Alias fm Start-Vifm
+Set-Alias curl curl.exe
 
 # Path modifications
 Add-Path "~\.vifm\bin"
