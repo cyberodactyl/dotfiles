@@ -21,4 +21,4 @@ map <C-i> <Action>(Forward)
 map <C-o> <Action>(Back)
 
 " Commands
-cmap ,rso so ~\.ideavimrc
+cmap rcr so ~\.ideavimrc

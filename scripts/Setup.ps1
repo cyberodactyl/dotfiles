@@ -1,4 +1,4 @@
-$homeFolderFiles = @('.vimrc', '.ideavimrc')
+$homeFolderFiles = @('.vimrc', '.ideavimrc', '.vsvimrc')
 $otherConfigs = @{
     'Profile.ps1' = '~\Documents\PowerShell\Profile.ps1';
     'vifmrc' = '~\.vifm\vifmrc';

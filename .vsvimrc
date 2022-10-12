@@ -7,3 +7,5 @@ nnoremap gD :vsc Edit.PeekDefinition
 nnoremap gs :vsc Edit.GoToImplementation
 nnoremap <Leader>z View.FullScreen
 nnoremap mm mm:vsc Edit.BriefBookmarkDrop0
+
+cmap rcr so ~\.vsvimrc
