@@ -24,6 +24,10 @@ function Start-Vifm {
     vifm --choose-dir - | Set-Location
 }
 
+function Start-TerminalHere {
+    wt -d .
+}
+
 # Config
 Set-PSReadLineOption -BellStyle None -EditMode Emacs
 
@@ -33,6 +37,13 @@ Set-Alias vim nvim
 Set-Alias gvim nvim-qt
 Set-Alias fm Start-Vifm
 Set-Alias curl curl.exe
+Set-Alias wthere Start-TerminalHere
+
+# Variables
+$global:x:dev = "C:\dev"
+$global:dc = "C:\"
+$global:ad = $env:APPDATA
+$global:pf = $env:ProgramFiles
 
 # Path modifications
 Add-Path "~\.vifm\bin"
