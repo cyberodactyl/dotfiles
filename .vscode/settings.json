@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*vim*": "viml"
+    },
+    "files.eol": "\n"
+}

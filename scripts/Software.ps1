@@ -41,6 +41,7 @@ $manualPackages = @{
     'Visual Studio 2022' = 'https://visualstudio.microsoft.com/';
     'AHK v2' = 'https://www.autohotkey.com/download/ahk-v2.exe';
 }
+
 function Test-PackageManager {
     param ([string] $name)
     try {
@@ -55,7 +56,10 @@ function Test-PackageManager {
 }
 
 function Install-Chocolatey {
-    Set-ExecutionPolicy Bypass -Scope Process -Force; `
+    try {
+        Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+    }
+    catch [System.Security.SecurityException] { }
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
     Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 }
@@ -82,7 +86,12 @@ $chocoPackages | ForEach-Object {
     choco install $_ -y
 }
 $wingetPackages | ForEach-Object {
-    winget install -e --id $_ --accept-package-agreements --accept-source-agreements
+    if ((winget list $_) -match 'No installed package found') {
+        winget install -e --id $_ --accept-package-agreements --accept-source-agreements
+    }
+    else {
+        Write-Output "$_ is already installed"
+    }
 }
 $npmPackages | ForEach-Object {
     npm install -g $_
