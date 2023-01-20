@@ -25,7 +25,7 @@ function Start-Vifm {
 }
 
 # Config
-Set-PSReadLineOption -BellStyle None -EditMode Emacs
+Set-PSReadLineOption -BellStyle Visual -EditMode Emacs
 
 # Aliases
 Set-Alias ln New-Symlink

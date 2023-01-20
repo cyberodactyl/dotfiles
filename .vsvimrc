@@ -1,11 +1,11 @@
 source ~\.vimrc
 
-nnoremap <Leader>r :vsc Debug.Start
-nnoremap <Leader>R :vsc Debug.StopDebugging
+nnoremap <Leader>r :vsc Debug.Start<Enter>
+nnoremap <Leader>R :vsc Debug.StopDebugging<Enter>
 
-nnoremap gD :vsc Edit.PeekDefinition
-nnoremap gs :vsc Edit.GoToImplementation
-nnoremap <Leader>z View.FullScreen
-nnoremap mm mm:vsc Edit.BriefBookmarkDrop0
+nnoremap gD :vsc Edit.PeekDefinition<Enter>
+nnoremap gs :vsc Edit.GoToImplementation<Enter>
+nnoremap <Leader>z :vsc View.FullScreen
+nnoremap mm mm:vsc Edit.BriefBookmarkDrop0<Enter>
 
 cmap rcr so ~\.vsvimrc
