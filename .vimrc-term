@@ -8,6 +8,7 @@ set termguicolors
 set clipboard=unnamedplus
 set nocompatible
 set wildmode=longest,list,full
+set splitbelow
 
 nmap ; <Plug>(easymotion-s2)
 
@@ -65,8 +66,12 @@ autocmd vimenter * ++nested colorscheme sonokai
 " -=== Mappings ===-
 " Common
 imap <C-BS> <C-W>
-nnoremap <C-s> :w<CR>
-nnoremap <C-S>q :qa!
+map <C-s> :w<CR>
+map <C-x> :x<CR>
+nnoremap <C-S-q> :qa!<CR>
+nnoremap ,<C-s> :w !sudo tee > /dev/null % <CR><CR>
+nnoremap ,<C-x> :w !sudo tee > /dev/null % <CR><CR>:qa!<CR>
+nnoremap <C-t> :term<CR><C-w>10-
 
 " NERDTree
 nnoremap <C-S-b> :NERDTreeFocus<CR>
@@ -79,3 +84,6 @@ inoremap <S-Enter> <ESC>o
 
 " -== Commands ===
 cnoremap rcr so ~\.vimrc
+
+"> Save as root
+cmap ,w w !sudo tee > /dev/null %

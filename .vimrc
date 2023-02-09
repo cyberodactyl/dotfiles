@@ -26,6 +26,9 @@ inoremap jM () {<Enter>
 inoremap j, () => {<Enter>
 inoremap jN <END>;<Enter>
 inoremap jn <ESC>o
+inoremap j; <ESC>lx$i)<ESC>
+
+"> Normal mode shortcuts
 nnoremap ,k A;<ESC>
 nnoremap ,K A();<ESC>
 nnoremap ,l A,<Enter>
@@ -120,6 +123,3 @@ nnoremap das /async<Enter>df<:s/>/<Enter>
 nmap <Leader>v <C-V>
 vnoremap <Leader>j <ESC>
 vnoremap D "_d
-
-"> Save as root
-cmap ,w!! w !sudo tee > /dev/null %

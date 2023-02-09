@@ -19,6 +19,9 @@ nnoremap mm mm:action ToggleBookmarkM<CR>
 nnoremap mn mn:action ToggleBookmarkN<CR>
 map <C-i> <Action>(Forward)
 map <C-o> <Action>(Back)
+inoremap <A-;> <Enter>;
+inoremap <A-o> <Enter> = <ESC>a
+inoremap <A-.> <Enter>.
 
 " Commands
 cmap rcr so ~\.ideavimrc
