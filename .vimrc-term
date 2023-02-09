@@ -69,8 +69,8 @@ imap <C-BS> <C-W>
 map <C-s> :w<CR>
 map <C-x> :x<CR>
 nnoremap <C-S-q> :qa!<CR>
-nnoremap ,<C-s> :w !sudo tee > /dev/null % <CR><CR>
-nnoremap ,<C-x> :w !sudo tee > /dev/null % <CR><CR>:qa!<CR>
+nnoremap ,<C-s> :w !sudo tee > /dev/null % <CR>O<ESC>:echo '# Saved'<CR>
+nnoremap ,<C-x> :w !sudo tee > /dev/null % <CR>O<ESC>:qa!<CR>
 nnoremap <C-t> :term<CR><C-w>10-
 
 " NERDTree
