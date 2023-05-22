@@ -119,6 +119,12 @@ nnoremap dst "zdiw"zpbdB
 "> Async task to method
 nnoremap das /async<Enter>df<:s/>/<Enter>
 
+"> Method to async task
+nnoremap cmt ^wiasync Task<<ESC>ea><ESC>^
+
+"> Void to async task
+nnoremap cvt ^wiasync <ESC>lcwTask<ESC>^
+
 "> Visual
 nmap <Leader>v <C-V>
 vnoremap <Leader>j <ESC>

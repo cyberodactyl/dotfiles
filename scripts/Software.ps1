@@ -6,8 +6,6 @@
 #>
 
 $chocoPackages = @(
-    # Runtime
-    'jdk8',
     # CLI
     'dos2unix',
     'grep',

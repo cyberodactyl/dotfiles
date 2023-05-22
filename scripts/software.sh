@@ -3,6 +3,7 @@ aptPackages=(
     'jq'
     'ranger'
     'dos2unix'
+    'curl'
 )
 
 apt update
