@@ -28,6 +28,7 @@ source ~/.zpm/plugins/@gh---spaceship-prompt---spaceship-prompt/spaceship.zsh
 SPACESHIP_HOST_SHOW=always
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_SEPARATE_LINE=true
+SPACESHIP_DIR_TRUNC_REPO=false
 
 # Aliases
 

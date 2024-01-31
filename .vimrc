@@ -34,6 +34,7 @@ nnoremap ,K A();<ESC>
 nnoremap ,l A,<Enter>
 nnoremap ^ 0
 nnoremap 0 ^
+nnoremap - $
 
 "> Switch jump
 nnoremap <Tab> ``
@@ -41,6 +42,10 @@ nnoremap <Tab> ``
 "> Deletion
 nnoremap dd "_dd
 nnoremap yd dd
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
 
 "> Textobj-function
 nnoremap vaf va{o?(<Enter>V
@@ -53,8 +58,6 @@ nnoremap dam va{okd
 nnoremap yam va{oky
 
 "> Parameter operations
-nnoremap <Leader>w /[,(]<Enter>w
-nnoremap <Leader>b ?[,(]<Enter>b
 nnoremap <Leader>p ?)<Enter>i
 nnoremap <Leader>e /)<Enter>i, <ESC>a
 nnoremap <Leader>E /);<Enter>i, <ESC>a
@@ -69,7 +72,7 @@ nnoremap <Space>; a;<ESC>
 nnoremap <Space><Space> zz
 nnoremap <Space>l i<Space><ESC>l
 nnoremap <Space>h db
-nnoremap <Space>j o<ESC><Space>
+nnoremap <Space>j o<ESC><Space>k
 nnoremap <Space>k O<ESC><Space>
 nnoremap <Space>d dd<Space>
 
@@ -129,3 +132,6 @@ nnoremap cvt ^wiasync <ESC>lcwTask<ESC>^
 nmap <Leader>v <C-V>
 vnoremap <Leader>j <ESC>
 vnoremap D "_d
+
+"> Windows/tabs
+nnoremap <Leader>w <C-W><C-W>

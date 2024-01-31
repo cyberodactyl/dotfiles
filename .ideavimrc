@@ -2,6 +2,7 @@ source ~\.vimrc
 set surround
 set argtextobj
 set highlightedyank
+set exchange
 set clipboard+=ideaput
 set visualbell
 
@@ -22,6 +23,8 @@ map <C-o> <Action>(Back)
 inoremap <A-;> <Enter>;
 inoremap <A-o> <Enter> = <ESC>a
 inoremap <A-.> <Enter>.
+nnoremap <Leader>n :action GotoNextError<CR>
+nnoremap <Leader>N :action GotoPreviousError<CR>
 
 " Commands
 cmap rcr so ~\.ideavimrc
