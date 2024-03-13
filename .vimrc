@@ -21,8 +21,8 @@ inoremap jl <ESC>la
 inoremap jL <ESC>A
 inoremap jh <ESC>hi
 inoremap jH <ESC>I
-inoremap jm <ESC>la {<Enter>
-inoremap jM () {<Enter>
+inoremap jm <ESC>la<Enter>{<Enter>}<Up><Enter><Tab>
+inoremap jM ()<Enter>{<Enter>}<Up><Enter><Tab>
 inoremap j, () => {<Enter>
 inoremap jN <END>;<Enter>
 inoremap jn <ESC>o
@@ -42,7 +42,6 @@ nnoremap <Tab> ``
 "> Deletion
 nnoremap dd "_dd
 nnoremap yd dd
-nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
@@ -64,7 +63,7 @@ nnoremap <Leader>E /);<Enter>i, <ESC>a
 nnoremap <Leader>a /(<Enter>a
 
 "> Leader mappings
-nmap <Leader>j :join<Enter>()
+map <Leader>j :join<Enter>()
 nnoremap <Leader>u V~<Esc>
 
 "> Space mappings
