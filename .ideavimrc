@@ -1,10 +1,11 @@
-source ~\.vimrc
+source ~/.vimrc
 set surround
 set argtextobj
 set highlightedyank
 set exchange
 set clipboard+=ideaput
 set visualbell
+set quickscope
 
 " Mappings
 map <Leader>r <Action>(Debug)
@@ -27,4 +28,4 @@ nnoremap <Leader>n :action GotoNextError<CR>
 nnoremap <Leader>N :action GotoPreviousError<CR>
 
 " Commands
-cmap rcr so ~\.ideavimrc
+cmap rcr so ~/.ideavimrc

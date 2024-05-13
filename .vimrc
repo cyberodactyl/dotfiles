@@ -23,7 +23,10 @@ inoremap jh <ESC>hi
 inoremap jH <ESC>I
 inoremap jm <ESC>la<Enter>{<Enter>}<Up><Enter><Tab>
 inoremap jM ()<Enter>{<Enter>}<Up><Enter><Tab>
-inoremap j, () => {<Enter>
+inoremap j, () => {<Enter><Enter><Up><Tab>
+inoremap Jm <ESC>la {<Enter><Enter>}<Up><Tab>
+inoremap JM ()<ESC>la {<Enter><Enter>}<Up><Tab>
+inoremap J, []() -> {<Enter>
 inoremap jN <END>;<Enter>
 inoremap jn <ESC>o
 inoremap j; <ESC>lx$i)<ESC>
