@@ -1,6 +1,7 @@
 param(
     [Parameter(Mandatory=$false)]
     [string] $DestinationFolder,
+    [switch] $Overwrite,
     [switch] $ExcludeOtherConfigs
 )
 
@@ -20,11 +21,11 @@ function New-SymLink {
         [string] $destination
     )
     
-    New-Item -ItemType SymbolicLink -Path $destination -Value $source
-    Write-Host "Created symbolic link: $source ==> $destination";
+    New-Item -ItemType SymbolicLink -Path $destination -Value $source -Force:$Overwrite
+    Write-Host "Created symbolic link: file $destination will point at $source";
 }
 
-Set-Location ..
+Set-Location "..\.."
 $wd = Get-Location
 
 foreach ($file in $homeFolderFiles) {
@@ -37,4 +38,4 @@ if (!$ExcludeOtherConfigs) {
     }
 }
 
-Write-Host "Done."
+Write-Host "Done"
