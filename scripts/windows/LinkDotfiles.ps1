@@ -1,3 +1,13 @@
+param(
+    [Parameter(Mandatory=$false)]
+    [string] $DestinationFolder,
+    [switch] $ExcludeOtherConfigs
+)
+
+if ([string]::IsNullOrWhiteSpace($DestinationFolder)) {
+    $DestinationFolder = "~\"
+}
+
 $homeFolderFiles = @('.vimrc', '.ideavimrc', '.vsvimrc')
 $otherConfigs = @{
     'Profile.ps1' = '~\Documents\PowerShell\Profile.ps1';
@@ -18,11 +28,13 @@ Set-Location ..
 $wd = Get-Location
 
 foreach ($file in $homeFolderFiles) {
-    New-SymLink "$wd\$file" "~\$file"
+    New-SymLink "$wd\$file" "${DestinationFolder}${file}"
 }
 
-foreach ($pair in $otherConfigs.GetEnumerator()) {
-    New-SymLink $pair.Key $pair.Value
+if (!$ExcludeOtherConfigs) {
+    foreach ($pair in $otherConfigs.GetEnumerator()) {
+        New-SymLink $pair.Key $pair.Value
+    }
 }
 
 Write-Host "Done."
