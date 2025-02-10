@@ -8,8 +8,9 @@ set visualbell
 set quickscope
 
 " Mappings
-map <Leader>r <Action>(Debug)
-map <Leader>R <Action>(Stop)
+map <Leader>d <Action>(Debug)
+map <Leader>r <Action>(Run)
+map <Leader>s <Action>(Stop)
 map <Leader>i <Action>(Generate)
 map gs <Action>(GotoImplementation)
 map gS <Action>(QuickImplementations)
