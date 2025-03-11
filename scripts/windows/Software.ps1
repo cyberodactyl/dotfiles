@@ -10,35 +10,27 @@ $chocoPackages = @(
     'dos2unix',
     'grep',
     # Tools
-    'vim',
     '7zip',
-    'postman',
     'marktext'
 )
 $wingetPackages = @(
     # SDK
-    'Microsoft.DotNet.SDK.6',
+    'Microsoft.DotNet.SDK.8',
     'Microsoft.DotNet.SDK.3_1',
     'Microsoft.dotNetFramework',
     # Runtime
     'Python.Python.3.9',
     # Tools
-    'Git.Git'
-    'Microsoft.PowerToys',
+    'Git.Git',
+    'vim.vim',
     'Microsoft.VisualStudioCode',
-    'Inkscape.Inkscape',
     # CLI
-    'Microsoft.AzureCLI',
     'stedolan.jq'
 )
 $npmPackages = @(
     '@angular/cli',
     'typescript'
 )
-$manualPackages = @{
-    'Visual Studio 2022' = 'https://visualstudio.microsoft.com/';
-    'AHK v2' = 'https://www.autohotkey.com/download/ahk-v2.exe';
-}
 
 function Test-PackageManager {
     param ([string] $name)
@@ -94,10 +86,5 @@ $wingetPackages | ForEach-Object {
 $npmPackages | ForEach-Object {
     npm install -g $_
 }
-
-Write-Output "--- Install manually ---"
-$manualPackages.GetEnumerator() `
-    | Select-Object @{ N='Software'; E={$_.Name} }, @{ N='Link'; E={$_.Value} } `
-    | Format-Table
 
 Write-Output "Done"
