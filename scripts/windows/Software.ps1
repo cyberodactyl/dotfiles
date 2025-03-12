@@ -21,8 +21,6 @@ $wingetPackages = @(
     # Runtime
     'Python.Python.3.9',
     # Tools
-    'Git.Git',
-    'vim.vim',
     'Microsoft.VisualStudioCode',
     # CLI
     'stedolan.jq'

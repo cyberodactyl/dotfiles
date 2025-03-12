@@ -4,10 +4,6 @@
     {
       "pattern": "https?://mail.google.com/*",
       "passKeys": ""
-    },
-    {
-      "pattern": "https?://asciident.com/*",
-      "passKeys": "*"
     }
   ],
   "filterLinkHints": false,
